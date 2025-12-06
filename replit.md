@@ -2,7 +2,9 @@
 
 ## Overview
 
-This is a mobile-first web application that aggregates Indian newspapers' e-papers into a single platform. Users can browse newspapers organized by language (English, Hindi, Marathi, Tamil, Telugu, Bengali, and others), view e-papers in an embedded viewer, and manage favorites. The app features a Google News-style interface optimized for mobile devices with Material Design principles, offering access to 30+ Indian newspapers across multiple languages and regions.
+This is a mobile-first web application that aggregates Indian newspapers' e-papers into a single platform. Users can browse newspapers organized by language (English, Hindi, Marathi, Tamil, Telugu, Bengali, and others), and open e-papers directly in a new browser tab for the best reading experience. The app features a Google News-style interface optimized for mobile devices with Material Design principles, offering access to 30+ Indian newspapers across multiple languages and regions.
+
+**Key Feature**: E-papers open in new browser tabs (not embedded) to ensure compatibility with all newspapers, as most papers block iframe embedding.
 
 ## User Preferences
 
@@ -19,7 +21,7 @@ Preferred communication style: Simple, everyday language.
 
 **Routing Structure**
 - `/` - Home page with newspaper grid and language filtering
-- `/read/:id` - E-paper viewer with embedded iframe
+- `/read/:id` - Redirect page that opens e-paper in new tab
 - `/favorites` - User's saved newspapers
 - `/languages` - Browse newspapers grouped by language
 - `/profile` - User settings including theme toggle
