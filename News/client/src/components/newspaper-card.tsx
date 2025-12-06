@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Heart, ExternalLink } from "lucide-react";
+import { useLocation } from "wouter";
+import { Heart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -33,6 +34,7 @@ function getInitials(name: string): string {
 }
 
 export function NewspaperCard({ newspaper, showFavoriteButton = true }: NewspaperCardProps) {
+  const [, setLocation] = useLocation();
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(newspaper.id);
   const bgColor = languageColors[newspaper.language] || "bg-gray-600";
@@ -46,7 +48,7 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
   };
 
   const handleCardClick = () => {
-    window.open(newspaper.epaperUrl, "_blank", "noopener,noreferrer");
+    setLocation(`/read/${newspaper.id}`);
   };
 
   const renderLogo = () => {
@@ -92,9 +94,6 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
           />
         </Button>
       )}
-      <div className="absolute top-1 left-1">
-        <ExternalLink className="h-3 w-3 text-muted-foreground opacity-50" />
-      </div>
       <div className="flex-1 flex items-center justify-center w-full relative">
         {renderLogo()}
       </div>
