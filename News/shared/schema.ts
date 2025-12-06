@@ -35,11 +35,11 @@ export const languages: Language[] = [
 ];
 
 export const newspapers: Newspaper[] = [
-  // English Newspapers
+  // English Newspapers (PDF e-papers only)
   {
     id: "toi",
     name: "Times of India",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/The_Times_of_India_Logo.svg/320px-The_Times_of_India_Logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.timesgroup.com&sz=128",
     epaperUrl: "https://epaper.timesgroup.com/",
     language: "english",
     region: "National",
@@ -48,7 +48,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "hindu",
     name: "The Hindu",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/The_Hindu_Logo.svg/320px-The_Hindu_Logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.thehindu.com&sz=128",
     epaperUrl: "https://epaper.thehindu.com/",
     language: "english",
     region: "National",
@@ -57,24 +57,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "ht",
     name: "Hindustan Times",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hindustan_Times_logo.svg/320px-Hindustan_Times_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.hindustantimes.com&sz=128",
     epaperUrl: "https://epaper.hindustantimes.com/",
     language: "english",
     region: "National",
     featured: true,
   },
   {
-    id: "ie",
-    name: "Indian Express",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Indian_Express_logo.svg/320px-Indian_Express_logo.svg.png",
-    epaperUrl: "https://indianexpress.com/todays-paper/",
-    language: "english",
-    region: "National",
-  },
-  {
     id: "deccan",
     name: "Deccan Chronicle",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Deccan-chronicle.svg/320px-Deccan-chronicle.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.deccanchronicle.com&sz=128",
     epaperUrl: "https://epaper.deccanchronicle.com/",
     language: "english",
     region: "South",
@@ -82,16 +74,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "telegraph",
     name: "The Telegraph",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Telegraph_%28Kolkata%29_logo.svg/320px-The_Telegraph_%28Kolkata%29_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.telegraphindia.com&sz=128",
     epaperUrl: "https://epaper.telegraphindia.com/",
     language: "english",
     region: "East",
   },
-  // Hindi Newspapers
+  // Hindi Newspapers (PDF e-papers only)
   {
     id: "dainik-jagran",
     name: "Dainik Jagran",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Dainik_Jagran_logo.svg/320px-Dainik_Jagran_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.jagran.com&sz=128",
     epaperUrl: "https://epaper.jagran.com/",
     language: "hindi",
     region: "National",
@@ -100,7 +92,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "dainik-bhaskar",
     name: "Dainik Bhaskar",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Dainik_Bhaskar_logo.svg/320px-Dainik_Bhaskar_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.bhaskar.com&sz=128",
     epaperUrl: "https://epaper.bhaskar.com/",
     language: "hindi",
     region: "National",
@@ -109,7 +101,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "amar-ujala",
     name: "Amar Ujala",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Amar_Ujala_Logo.svg/320px-Amar_Ujala_Logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.amarujala.com&sz=128",
     epaperUrl: "https://epaper.amarujala.com/",
     language: "hindi",
     region: "North",
@@ -117,32 +109,24 @@ export const newspapers: Newspaper[] = [
   {
     id: "hindustan",
     name: "Hindustan",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Hindustan_hindi_logo.svg/320px-Hindustan_hindi_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.livehindustan.com&sz=128",
     epaperUrl: "https://epaper.livehindustan.com/",
-    language: "hindi",
-    region: "National",
-  },
-  {
-    id: "navbharat",
-    name: "Navbharat Times",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Navbharat_Times_logo.svg/320px-Navbharat_Times_logo.svg.png",
-    epaperUrl: "https://navbharattimes.indiatimes.com/",
     language: "hindi",
     region: "National",
   },
   {
     id: "rajasthan-patrika",
     name: "Rajasthan Patrika",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajasthan_Patrika_Logo.svg/320px-Rajasthan_Patrika_Logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.patrika.com&sz=128",
     epaperUrl: "https://epaper.patrika.com/",
     language: "hindi",
     region: "West",
   },
-  // Marathi Newspapers
+  // Marathi Newspapers (PDF e-papers only)
   {
     id: "lokmat",
     name: "Lokmat",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Lokmat_logo.svg/320px-Lokmat_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.lokmat.com&sz=128",
     epaperUrl: "https://epaper.lokmat.com/",
     language: "marathi",
     region: "Maharashtra",
@@ -151,7 +135,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "loksatta",
     name: "Loksatta",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Loksatta_logo.svg/320px-Loksatta_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.loksatta.com&sz=128",
     epaperUrl: "https://epaper.loksatta.com/",
     language: "marathi",
     region: "Maharashtra",
@@ -159,32 +143,24 @@ export const newspapers: Newspaper[] = [
   {
     id: "sakal",
     name: "Sakal",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Sakal_Newspaper_Logo.svg/320px-Sakal_Newspaper_Logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.esakal.com&sz=128",
     epaperUrl: "https://epaper.esakal.com/",
-    language: "marathi",
-    region: "Maharashtra",
-  },
-  {
-    id: "maharashtra-times",
-    name: "Maharashtra Times",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Maharashtra_Times_logo.svg/320px-Maharashtra_Times_logo.svg.png",
-    epaperUrl: "https://maharashtratimes.com/",
     language: "marathi",
     region: "Maharashtra",
   },
   {
     id: "pudhari",
     name: "Pudhari",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Pudhari_logo.svg/320px-Pudhari_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.pudhari.com&sz=128",
     epaperUrl: "https://epaper.pudhari.com/",
     language: "marathi",
     region: "Maharashtra",
   },
-  // Gujarati Newspapers
+  // Gujarati Newspapers (PDF e-papers only)
   {
     id: "divya-bhaskar",
     name: "Divya Bhaskar",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Divya_Bhaskar_logo.svg/320px-Divya_Bhaskar_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.divyabhaskar.co.in&sz=128",
     epaperUrl: "https://epaper.divyabhaskar.co.in/",
     language: "gujarati",
     region: "Gujarat",
@@ -192,7 +168,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "gujarat-samachar",
     name: "Gujarat Samachar",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gujarat_Samachar_logo.svg/320px-Gujarat_Samachar_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.gujaratsamachar.com&sz=128",
     epaperUrl: "https://epaper.gujaratsamachar.com/",
     language: "gujarati",
     region: "Gujarat",
@@ -200,16 +176,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "sandesh",
     name: "Sandesh",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sandesh_Logo.svg/320px-Sandesh_Logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.sandesh.com&sz=128",
     epaperUrl: "https://epaper.sandesh.com/",
     language: "gujarati",
     region: "Gujarat",
   },
-  // Tamil Newspapers
+  // Tamil Newspapers (PDF e-papers only)
   {
     id: "dinamalar",
     name: "Dinamalar",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Dinamalar_logo.svg/320px-Dinamalar_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.dinamalar.com&sz=128",
     epaperUrl: "https://epaper.dinamalar.com/",
     language: "tamil",
     region: "Tamil Nadu",
@@ -217,7 +193,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "dinamani",
     name: "Dinamani",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Dinamani_logo.svg/320px-Dinamani_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.dinamani.com&sz=128",
     epaperUrl: "https://epaper.dinamani.com/",
     language: "tamil",
     region: "Tamil Nadu",
@@ -225,16 +201,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "daily-thanthi",
     name: "Daily Thanthi",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Daily_Thanthi_logo.svg/320px-Daily_Thanthi_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.dailythanthi.com&sz=128",
     epaperUrl: "https://epaper.dailythanthi.com/",
     language: "tamil",
     region: "Tamil Nadu",
   },
-  // Telugu Newspapers
+  // Telugu Newspapers (PDF e-papers only)
   {
     id: "eenadu",
     name: "Eenadu",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Eenadu_logo.svg/320px-Eenadu_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.eenadu.net&sz=128",
     epaperUrl: "https://epaper.eenadu.net/",
     language: "telugu",
     region: "Andhra Pradesh",
@@ -242,7 +218,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "sakshi",
     name: "Sakshi",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sakshi_logo.svg/320px-Sakshi_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.sakshi.com&sz=128",
     epaperUrl: "https://epaper.sakshi.com/",
     language: "telugu",
     region: "Telangana",
@@ -250,16 +226,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "andhra-jyothy",
     name: "Andhra Jyothy",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Andhra_Jyothy_logo.svg/320px-Andhra_Jyothy_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.andhrajyothy.com&sz=128",
     epaperUrl: "https://epaper.andhrajyothy.com/",
     language: "telugu",
     region: "Andhra Pradesh",
   },
-  // Bengali Newspapers
+  // Bengali Newspapers (PDF e-papers only)
   {
     id: "anandabazar",
     name: "Anandabazar Patrika",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Anandabazar_Patrika_logo.svg/320px-Anandabazar_Patrika_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.anandabazar.com&sz=128",
     epaperUrl: "https://epaper.anandabazar.com/",
     language: "bengali",
     region: "West Bengal",
@@ -267,7 +243,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "bartaman",
     name: "Bartaman",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Bartaman_Patrika_logo.svg/320px-Bartaman_Patrika_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.bartamanpatrika.com&sz=128",
     epaperUrl: "https://epaper.bartamanpatrika.com/",
     language: "bengali",
     region: "West Bengal",
@@ -275,16 +251,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "sangbad-pratidin",
     name: "Sangbad Pratidin",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sangbad_Pratidin_logo.svg/320px-Sangbad_Pratidin_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.sangbadpratidin.in&sz=128",
     epaperUrl: "https://epaper.sangbadpratidin.in/",
     language: "bengali",
     region: "West Bengal",
   },
-  // Kannada Newspapers
+  // Kannada Newspapers (PDF e-papers only)
   {
     id: "prajavani",
     name: "Prajavani",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Prajavani_logo.svg/320px-Prajavani_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.prajavani.net&sz=128",
     epaperUrl: "https://epaper.prajavani.net/",
     language: "kannada",
     region: "Karnataka",
@@ -292,7 +268,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "vijaya-karnataka",
     name: "Vijaya Karnataka",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Vijaya_Karnataka_logo.svg/320px-Vijaya_Karnataka_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.vijaykarnataka.com&sz=128",
     epaperUrl: "https://epaper.vijaykarnataka.com/",
     language: "kannada",
     region: "Karnataka",
@@ -300,16 +276,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "udayavani",
     name: "Udayavani",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Udayavani_logo.svg/320px-Udayavani_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.udayavani.com&sz=128",
     epaperUrl: "https://epaper.udayavani.com/",
     language: "kannada",
     region: "Karnataka",
   },
-  // Malayalam Newspapers
+  // Malayalam Newspapers (PDF e-papers only)
   {
     id: "malayala-manorama",
     name: "Malayala Manorama",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Malayala_Manorama_logo.svg/320px-Malayala_Manorama_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.manoramaonline.com&sz=128",
     epaperUrl: "https://epaper.manoramaonline.com/",
     language: "malayalam",
     region: "Kerala",
@@ -317,7 +293,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "mathrubhumi",
     name: "Mathrubhumi",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Mathrubhumi_logo.svg/320px-Mathrubhumi_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.mathrubhumi.com&sz=128",
     epaperUrl: "https://epaper.mathrubhumi.com/",
     language: "malayalam",
     region: "Kerala",
@@ -325,16 +301,16 @@ export const newspapers: Newspaper[] = [
   {
     id: "madhyamam",
     name: "Madhyamam",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Madhyamam_logo.svg/320px-Madhyamam_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.madhyamam.com&sz=128",
     epaperUrl: "https://epaper.madhyamam.com/",
     language: "malayalam",
     region: "Kerala",
   },
-  // Punjabi Newspapers
+  // Punjabi Newspapers (PDF e-papers only)
   {
     id: "ajit",
     name: "Ajit",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Ajit_Daily_logo.svg/320px-Ajit_Daily_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.ajitjalandhar.com&sz=128",
     epaperUrl: "https://epaper.ajitjalandhar.com/",
     language: "punjabi",
     region: "Punjab",
@@ -342,7 +318,7 @@ export const newspapers: Newspaper[] = [
   {
     id: "jagbani",
     name: "Jagbani",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jagbani_logo.svg/320px-Jagbani_logo.svg.png",
+    logo: "https://www.google.com/s2/favicons?domain=epaper.jagbani.com&sz=128",
     epaperUrl: "https://epaper.jagbani.com/",
     language: "punjabi",
     region: "Punjab",

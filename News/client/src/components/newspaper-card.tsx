@@ -12,16 +12,58 @@ interface NewspaperCardProps {
   showFavoriteButton?: boolean;
 }
 
+const languageColors: Record<string, string> = {
+  english: "bg-blue-600",
+  hindi: "bg-red-600",
+  marathi: "bg-orange-600",
+  gujarati: "bg-green-600",
+  tamil: "bg-purple-600",
+  telugu: "bg-cyan-600",
+  bengali: "bg-indigo-600",
+  kannada: "bg-amber-600",
+  malayalam: "bg-teal-600",
+  punjabi: "bg-rose-600",
+};
+
+function getInitials(name: string): string {
+  const words = name.split(" ");
+  if (words.length === 1) {
+    return name.substring(0, 2).toUpperCase();
+  }
+  return words.slice(0, 2).map(w => w.charAt(0)).join("").toUpperCase();
+}
+
 export function NewspaperCard({ newspaper, showFavoriteButton = true }: NewspaperCardProps) {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(newspaper.id);
+  const bgColor = languageColors[newspaper.language] || "bg-gray-600";
+  const initials = getInitials(newspaper.name);
+  const [imageError, setImageError] = useState(false);
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     toggleFavorite(newspaper.id);
+  };
+
+  const renderLogo = () => {
+    if (newspaper.logo && !imageError) {
+      return (
+        <img
+          src={newspaper.logo}
+          alt={`${newspaper.name} logo`}
+          className="w-16 h-16 object-contain rounded-lg shadow-md bg-white p-1"
+          onError={() => setImageError(true)}
+        />
+      );
+    }
+    return (
+      <div className={`w-16 h-16 ${bgColor} rounded-xl flex items-center justify-center shadow-md`}>
+        <span className="text-xl font-bold text-white">
+          {initials}
+        </span>
+      </div>
+    );
   };
 
   return (
@@ -47,28 +89,8 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
             />
           </Button>
         )}
-        <div className="flex-1 flex items-center justify-center w-full">
-          {!imageLoaded && !imageError && (
-            <Skeleton className="w-16 h-16 rounded-md" />
-          )}
-          {imageError ? (
-            <div className="w-16 h-16 bg-muted rounded-md flex items-center justify-center">
-              <span className="text-2xl font-bold text-muted-foreground">
-                {newspaper.name.charAt(0)}
-              </span>
-            </div>
-          ) : (
-            <img
-              src={newspaper.logo}
-              alt={newspaper.name}
-              className={`max-w-full max-h-16 object-contain transition-opacity duration-200 ${
-                imageLoaded ? "opacity-100" : "opacity-0"
-              }`}
-              onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
-              loading="lazy"
-            />
-          )}
+        <div className="flex-1 flex items-center justify-center w-full relative">
+          {renderLogo()}
         </div>
         <p className="mt-2 text-xs text-center font-medium text-foreground truncate w-full" data-testid={`text-newspaper-name-${newspaper.id}`}>
           {newspaper.name}
