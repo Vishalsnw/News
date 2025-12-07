@@ -44,8 +44,9 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
   };
 
   const handleCardClick = () => {
-    // Navigate to internal viewer page instead of opening external URL
-    window.location.href = `/read/${newspaper.id}`;
+    // Navigate directly to the ePaper URL within the same window
+    // This works with WebView apps to keep navigation internal
+    window.location.href = newspaper.epaperUrl;
   };
 
   const renderLogo = () => {
