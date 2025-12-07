@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Heart } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFavorites } from "@/lib/favorites-context";
 import type { Newspaper } from "@shared/schema";
@@ -11,17 +9,17 @@ interface NewspaperCardProps {
   showFavoriteButton?: boolean;
 }
 
-const languageColors: Record<string, string> = {
-  english: "bg-blue-600",
-  hindi: "bg-red-600",
-  marathi: "bg-orange-600",
-  gujarati: "bg-green-600",
-  tamil: "bg-purple-600",
-  telugu: "bg-cyan-600",
-  bengali: "bg-indigo-600",
-  kannada: "bg-amber-600",
-  malayalam: "bg-teal-600",
-  punjabi: "bg-rose-600",
+const languageGradients: Record<string, string> = {
+  english: "from-blue-500 to-blue-700",
+  hindi: "from-red-500 to-red-700",
+  marathi: "from-orange-500 to-orange-700",
+  gujarati: "from-green-500 to-green-700",
+  tamil: "from-purple-500 to-purple-700",
+  telugu: "from-cyan-500 to-cyan-700",
+  bengali: "from-indigo-500 to-indigo-700",
+  kannada: "from-amber-500 to-amber-700",
+  malayalam: "from-teal-500 to-teal-700",
+  punjabi: "from-rose-500 to-rose-700",
 };
 
 function getInitials(name: string): string {
@@ -35,7 +33,7 @@ function getInitials(name: string): string {
 export function NewspaperCard({ newspaper, showFavoriteButton = true }: NewspaperCardProps) {
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(newspaper.id);
-  const bgColor = languageColors[newspaper.language] || "bg-gray-600";
+  const gradientColor = languageGradients[newspaper.language] || "from-gray-500 to-gray-700";
   const initials = getInitials(newspaper.name);
   const [imageError, setImageError] = useState(false);
 
@@ -52,17 +50,20 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
   const renderLogo = () => {
     if (newspaper.logo && !imageError) {
       return (
-        <img
-          src={newspaper.logo}
-          alt={`${newspaper.name} logo`}
-          className="w-16 h-16 object-contain rounded-lg shadow-md bg-white p-1"
-          onError={() => setImageError(true)}
-        />
+        <div className="logo-container w-[72px] h-[72px] p-2 flex items-center justify-center">
+          <img
+            src={newspaper.logo}
+            alt={`${newspaper.name} logo`}
+            className="w-full h-full object-contain"
+            onError={() => setImageError(true)}
+          />
+        </div>
       );
     }
     return (
-      <div className={`w-16 h-16 ${bgColor} rounded-xl flex items-center justify-center shadow-md`}>
-        <span className="text-xl font-bold text-white">
+      <div className={`w-[72px] h-[72px] bg-gradient-to-br ${gradientColor} rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden`}>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent" />
+        <span className="text-xl font-bold text-white drop-shadow-sm relative z-10">
           {initials}
         </span>
       </div>
@@ -70,47 +71,45 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
   };
 
   return (
-    <Card 
-      className="group relative flex flex-col items-center justify-center p-4 bg-card hover-elevate active-elevate-2 cursor-pointer transition-transform duration-150 aspect-square"
+    <div 
+      className="newspaper-card-glossy flex flex-col items-center justify-center p-4 cursor-pointer aspect-square animate-press"
       data-testid={`card-newspaper-${newspaper.id}`}
       onClick={handleCardClick}
     >
       {showFavoriteButton && (
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-1 right-1 h-8 w-8 z-10"
+        <button
+          className="favorite-button absolute top-3 right-3 h-8 w-8 rounded-full flex items-center justify-center z-10 animate-press"
           onClick={handleFavoriteClick}
           data-testid={`button-favorite-${newspaper.id}`}
         >
           <Heart 
-            className={`h-4 w-4 transition-colors ${
+            className={`h-4 w-4 transition-all duration-200 ${
               favorited 
-                ? "fill-red-500 text-red-500" 
-                : "text-muted-foreground"
+                ? "fill-red-500 text-red-500 scale-110" 
+                : "text-gray-400"
             }`} 
           />
-        </Button>
+        </button>
       )}
       <div className="flex-1 flex items-center justify-center w-full relative">
         {renderLogo()}
       </div>
-      <p className="mt-2 text-xs text-center font-medium text-foreground truncate w-full" data-testid={`text-newspaper-name-${newspaper.id}`}>
+      <p className="mt-3 text-sm text-center font-semibold text-foreground truncate w-full leading-tight" data-testid={`text-newspaper-name-${newspaper.id}`}>
         {newspaper.name}
       </p>
-      <p className="text-[10px] text-muted-foreground truncate w-full text-center">
+      <p className="text-xs text-muted-foreground truncate w-full text-center mt-0.5 font-medium">
         {newspaper.region}
       </p>
-    </Card>
+    </div>
   );
 }
 
 export function NewspaperCardSkeleton() {
   return (
-    <Card className="flex flex-col items-center justify-center p-4 aspect-square">
-      <Skeleton className="w-16 h-16 rounded-md" />
-      <Skeleton className="mt-2 h-3 w-20" />
-      <Skeleton className="mt-1 h-2 w-14" />
-    </Card>
+    <div className="newspaper-card-glossy flex flex-col items-center justify-center p-4 aspect-square">
+      <Skeleton className="w-[72px] h-[72px] rounded-2xl" />
+      <Skeleton className="mt-3 h-4 w-20 rounded-lg" />
+      <Skeleton className="mt-1.5 h-3 w-14 rounded-lg" />
+    </div>
   );
 }
