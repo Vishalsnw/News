@@ -45,6 +45,10 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
     toggleFavorite(newspaper.id);
   };
 
+  const handleCardClick = () => {
+    window.open(newspaper.epaperUrl, "_blank", "noopener,noreferrer");
+  };
+
   const renderLogo = () => {
     if (newspaper.logo && !imageError) {
       return (
@@ -66,44 +70,38 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
   };
 
   return (
-    <a
-      href={newspaper.epaperUrl}
-      target="_top"
-      rel="noopener noreferrer"
-      className="block"
+    <Card 
+      className="group relative flex flex-col items-center justify-center p-4 bg-card hover-elevate active-elevate-2 cursor-pointer transition-transform duration-150 aspect-square"
+      data-testid={`card-newspaper-${newspaper.id}`}
+      onClick={handleCardClick}
     >
-      <Card 
-        className="group relative flex flex-col items-center justify-center p-4 bg-card hover-elevate active-elevate-2 cursor-pointer transition-transform duration-150 aspect-square"
-        data-testid={`card-newspaper-${newspaper.id}`}
-      >
-        {showFavoriteButton && (
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-1 right-1 h-8 w-8 z-10"
-            onClick={handleFavoriteClick}
-            data-testid={`button-favorite-${newspaper.id}`}
-          >
-            <Heart 
-              className={`h-4 w-4 transition-colors ${
-                favorited 
-                  ? "fill-red-500 text-red-500" 
-                  : "text-muted-foreground"
-              }`} 
-            />
-          </Button>
-        )}
-        <div className="flex-1 flex items-center justify-center w-full relative">
-          {renderLogo()}
-        </div>
-        <p className="mt-2 text-xs text-center font-medium text-foreground truncate w-full" data-testid={`text-newspaper-name-${newspaper.id}`}>
-          {newspaper.name}
-        </p>
-        <p className="text-[10px] text-muted-foreground truncate w-full text-center">
-          {newspaper.region}
-        </p>
-      </Card>
-    </a>
+      {showFavoriteButton && (
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute top-1 right-1 h-8 w-8 z-10"
+          onClick={handleFavoriteClick}
+          data-testid={`button-favorite-${newspaper.id}`}
+        >
+          <Heart 
+            className={`h-4 w-4 transition-colors ${
+              favorited 
+                ? "fill-red-500 text-red-500" 
+                : "text-muted-foreground"
+            }`} 
+          />
+        </Button>
+      )}
+      <div className="flex-1 flex items-center justify-center w-full relative">
+        {renderLogo()}
+      </div>
+      <p className="mt-2 text-xs text-center font-medium text-foreground truncate w-full" data-testid={`text-newspaper-name-${newspaper.id}`}>
+        {newspaper.name}
+      </p>
+      <p className="text-[10px] text-muted-foreground truncate w-full text-center">
+        {newspaper.region}
+      </p>
+    </Card>
   );
 }
 
