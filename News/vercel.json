@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/api/newspapers", "destination": "/api/newspapers" },
+    { "source": "/api/newspapers/:id", "destination": "/api/newspapers/[id]" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
