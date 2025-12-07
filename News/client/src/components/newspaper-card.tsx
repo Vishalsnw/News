@@ -44,7 +44,8 @@ export function NewspaperCard({ newspaper, showFavoriteButton = true }: Newspape
   };
 
   const handleCardClick = () => {
-    window.open(newspaper.epaperUrl, "_blank", "noopener,noreferrer");
+    // Navigate to internal viewer page instead of opening external URL
+    window.location.href = `/read/${newspaper.id}`;
   };
 
   const renderLogo = () => {

@@ -17,7 +17,7 @@ export default function Viewer() {
 
   useEffect(() => {
     if (newspaper) {
-      window.location.href = newspaper.epaperUrl;
+      window.location.replace(newspaper.epaperUrl);
     }
   }, [newspaper]);
 
